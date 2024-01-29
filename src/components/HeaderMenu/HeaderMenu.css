@@ -1,0 +1,57 @@
+/* HeaderMenu.css */
+.header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Ajout de la transition pour l'opacité */
+    z-index: 1000;
+}
+
+.header-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0s; /* Ajout de la transition pour l'opacité */
+}
+
+.menu-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.menu-items a,
+.menu-items button {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu-items button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-items a:hover,
+.menu-items button:hover {
+    color: lightgray;
+}
+
+.menu-items.open a,
+.menu-items.open button {
+    opacity: 1;
+    transform: translateY(0); /* Annulation de la translation pour montrer l'élément */
+}
